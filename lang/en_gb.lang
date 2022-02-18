@@ -16,7 +16,6 @@ feeds_item_raw = All data as JSON
 feeds_item_title = Title
 feeds_item_url = URL
 feeds_item_uid = Id
-feeds_item_type = Facebook Type
 feeds_item_mediasource = MediaSource
 
 feeds_item_status_online = Online
@@ -54,29 +53,6 @@ feeds_blacklist_sources_notice = If selected, these sources will not be saved.
 
 feeds_media_manager_effect = File: fetch from Feeds (if *.feeds)
 
-feeds_facebook = Facebook
-feeds_facebook_app_id = App Id
-feeds_facebook_app_secret = App Secret
-feeds_facebook_app_title = App title
-feeds_facebook_app_title_note = optional
-feeds_facebook_settings = Facebook App
-feeds_facebook_feed = Facebook Feed
-feeds_facebook_profile_id = User ID or page ID
-feeds_facebook_token = Access token
-feeds_facebook_token_note = Optional (required for private entries)
-feeds_facebook_count = Number of entries
-feeds_facebook_api_version = API version
-feeds_facebook_result_type = Result
-feeds_facebook_result_type_feed = All entries
-feeds_facebook_result_type_posts = Only own entries
-feeds_facebook_result_type_tagged = Only foreign feeds
-
-feeds_facebook_events = Facebook events
-feeds_facebook_events_page_name =  Facebook Page name
-feeds_facebook_events_page_name_notice = Name as it is displayed in the URL of the Facebook Page, ex <code>REDAXO</code>
-feeds_facebook_events_access_token = Access token
-feeds_facebook_events_access_token_notice = Please read the information concering Facebook access tokens in the feeds help section
-
 feeds_rss = RSS
 feeds_rss_feed = RSS feed
 feeds_rss_url = URL
@@ -112,19 +88,6 @@ feeds_youtube_api_key_notice = Activate the Youtube Data API v3 and enter your A
 feeds_youtube_playlist = Youtube :: Playlist
 feeds_youtube_playlist_id = Playlist-ID
 feeds_youtube_playlist_id_notice = Ex. <code>PLrevOqFLX0RMyUWioOz3X6gmLiGvAh6M5</code>
-
-feeds_instagram = Instagram
-feeds_instagram_settings = Settings
-feeds_instagram_access_token = Access Token
-
-feeds_instagram_tag = Instagram :: Tag
-feeds_instagram_tag_name = Tagname
-feeds_instagram_tag_without_prefix = Enter tag names without #
-feeds_instagram_count = Number of entries
-
-feeds_instagram_user = Instagram :: user
-feeds_instagram_username = Username / User-ID
-feeds_instagram_username_notice = When using the official API (access token is set) the User-ID must be used, otherwise use the username
 
 feeds_vimeo_pro_user = Vimeo Pro :: All videos of a user
 feeds_vimeo_user_id = User ID

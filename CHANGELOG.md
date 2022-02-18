@@ -3,6 +3,14 @@ Changelog
 
 ## Feeds
 
+Version 4.0.0 Dirty Dancing - 18.02.2022
+--------------------------
+- Facebook removed 
+- Instagram removed
+- improved docs
+- vendor updates
+- fancy new release name: Dancing
+
 Version 3.0.0 Rumba - XX.XX.2019
 --------------------------
 - Google+ removed

@@ -16,7 +16,6 @@ feeds_item_raw = All data som Json
 feeds_item_title = Titel
 feeds_item_url = Url
 feeds_item_uid = Id
-feeds_item_type = Facebook Type
 feeds_item_mediasource = MediaSource
 
 feeds_item_status_online = Online
@@ -54,29 +53,6 @@ feeds_blacklist_sources_notice = Om utvalt kommer dessa källor inte att sparas.
 
 feeds_media_manager_effect = Fil: Läs in från Feeds (om * .feeds)
 
-feeds_facebook = Facebook
-feeds_facebook_app_id = App Id
-feeds_facebook_app_secret = App Secret
-feeds_facebook_app_title = Titel der App
-feeds_facebook_app_title_note = optional
-feeds_facebook_settings = Facebook App
-feeds_facebook_feed = Facebook Feed
-feeds_facebook_profile_id = User ID eller page ID
-feeds_facebook_token = Access token
-feeds_facebook_token_note = Valfritt (krävs för privata inlägg)
-feeds_facebook_count = Antal inlägg
-feeds_facebook_api_version = API-version
-feeds_facebook_result_type = Resultat
-feeds_facebook_result_type_feed = Alla inlägg
-feeds_facebook_result_type_posts = Endast egna inlägg
-feeds_facebook_result_type_tagged = Endast andras inlägg
-
-feeds_facebook_events = Facebook-events
-feeds_facebook_events_page_name =  Facebooksidans namn
-feeds_facebook_events_page_name_notice = Som skrivet i webbadressen på Facebook-sidan, t.ex. <code> REDAXO </ code>
-feeds_facebook_events_access_token = Access token
-feeds_facebook_events_access_token_notice = Följ instruktionerna för Facebook-Access-Token i Feeds Hjälp.
-
 feeds_rss = RSS
 feeds_rss_feed = RSS feed
 feeds_rss_url = URL
@@ -112,19 +88,6 @@ feeds_youtube_api_key_notice = Aktivera Youtube Data API v3 och spara API_KEY h�
 feeds_youtube_playlist = Youtube :: Playlist
 feeds_youtube_playlist_id = Playlist-ID
 feeds_youtube_playlist_id_notice = t.ex. <code>PLrevOqFLX0RMyUWioOz3X6gmLiGvAh6M5</code>
-
-feeds_instagram = Instagram
-feeds_instagram_settings = Inställningar
-feeds_instagram_access_token = Access Token
-
-feeds_instagram_tag = Instagram :: Tag
-feeds_instagram_tag_name = Tagname
-feeds_instagram_tag_without_prefix = Ange taggen utan #
-feeds_instagram_count = Antal inlägg
-
-feeds_instagram_user = Instagram :: user
-feeds_instagram_username = Användarnamn
-feeds_instagram_username_notice = Vid användning av det officiella API:et (Access Token deposited) måste användar-ID:n användas, annars användarnamnet.
 
 feeds_vimeo_pro_user = Vimeo Pro :: Videos av en användare
 feeds_vimeo_user_id = User-ID

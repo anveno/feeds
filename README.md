@@ -6,7 +6,7 @@ Ein REDAXO5-AddOn zum Abruf externer Streams, vormals YFeed.
 
 ## Features
 
-* Abruf von Facebook-, Twitter-, YouTube-, Vimeo- und RSS-Streams.
+* Abruf von Twitter-, YouTube-, Vimeo- und RSS-Streams.
 * Dauerhaftes Speichern der Beiträge in einer Datenbank-Tabelle
 * Nachträgliche Aktualisierung der Beiträge (z.B. nach einem Update / einer Korrektur)
 * Erweiterung um eigene Feed-Typen möglich, z.B. Google My Business o.a.
@@ -46,7 +46,7 @@ Vendoren, siehe Vendors-Ordner des AddOns
 3. den Anweisungen der Stream-Einstellungen folgen und
 4. anschließend speichern.
 
-> **Hinweis:** Ggf. müssen zusätzlich in den Einstellungen von Feeds Zugangsdaten (bspw. API-Schlüssel) hinterlegt werden, bspw. bei Facebook, Twitter oder YouTube.
+> **Hinweis:** Ggf. müssen zusätzlich in den Einstellungen von Feeds Zugangsdaten (bspw. API-Schlüssel) hinterlegt werden, bspw. Twitter oder YouTube.
 
 ### Feed aktualisieren
 
@@ -116,64 +116,9 @@ Weitere Infos zu Extension Points in REDAXO unter https://www.redaxo.org/doku/ma
 
 > Tipp: Du hast Beispiele aus der Praxis für die Extension Points? Teile sie mit der REDAXO-Community! [Zum GitHub-Repository von Feeds](github.com/FriendsOfREDAXO/feeds/)
 
-## Facebook
-
-### Wann brauche ich ein Access Token für Facebook?
-
-Stand 2017: Bei Facebook Pages wird kein Access-Token benötigt, falls nur die öffentlich einsehbaren Einträge eingelesen werden sollen. Für Einräge mit eingeschränkter Sichtbarkeit wird ein User-Access Token oder Page-Access Token benötigt. Für Facebook User-Feeds wird ein User-Access-Token mit der Berechtigung `user_posts` benötigt.
-
-Stand 2019: Ist der Nutzer, der den Access-Token generiert, Administrator der Facebook-Seite, so ist kein zusätzlicher Freigabe-Prozess der Facebook-App erforderlich.
-
-### Wie erzeuge ich ein langlebigen Access-Token für Facebook?
-
-[Basierend auf diesem Eintrag von Stackoverflow: Long-lasting FB access-token for server to pull FB page info](https://stackoverflow.com/questions/12168452/long-lasting-fb-access-token-for-server-to-pull-fb-page-info/21927690#21927690)
-
-1.  Auf [developers.facebook.com](https://developers.facebook.com) einloggen und Facebook-App erzeugen, den Anweisungen folgen.
-2.  Wichtig: Die App soll sich nicht im Live-Modus, sondern noch im Entwickler-Modus befinden, sonst schlagen die nachfolgenden Aktionen fehl.
-3.  Den [Graph API Explorer](https://developers.facebook.com/tools/explorer/) aufrufen. Dort oben rechts jene App auswählen, die für Feeds verwendet werden soll.
-4.  Das Auswahlfeld "Zugangsschlüssel anfordern" anklicken und darin entweder  
-    A) "Seitenzugriffs-Schlüssel anfordern" wählen und den Anweisungen folgen oder  
-    B) Bei bereits bestehender Zugriffsberechtigung die gewünschte Facebook-Page auswählen.
-5.  Im Feld "Zugriffsschlüssel" befindet sich ein kurzlebiger Zugangsschlüssel (hier: `access_token1`), der nach ca. 1 Stunde ungültig wird. Diesen in folgenden Link einsetzen, zusammen mit den App-Zugangsdaten:  
-    `https://graph.facebook.com/oauth/access_token?client_id=[[[App ID]]]&client_secret=[[[App secret]]]&grant_type=fb_exchange_token&fb_exchange_token=[[[access_token1]]]` und aufrufen.  
-    Der durch den Link erzeugten neuen langlebigen Zugriffsschlüssel (hier: `access_token2`) ist ca. 2 Monate gültig.
-6.  Diesen Code erneut kopieren und in diesen Link einfügen:  
-    `https://graph.facebook.com/me/accounts?access_token=[[[access_token2]]]`
-7.  Gibt es hier keine Fehlermeldung, kann der nun generierte, neue "unsterbliche" Zugangsschlüssel kann dann in den Einstellungen für den Facebook-Stream eingesetzt werden. Er wird nur noch dann ungültig, wenn bspw. das Passwort des Facebook-Accounts geändert wird, Admin-Rechte für die Facebook-Page entzogen werden oder die App gelöscht wird.
-
-### Tipps: 
-
-Jeder Token kann [auf der Facebook Developer Debug-Seite](https://developers.facebook.com/tools/debug/accesstoken/) überprüft werden, welche Gültigkeitsdauer vorhanden ist.
-
-Hier löst man Tokens aus und Berechtigungen setzen 
-
-https://developers.facebook.com/tools/accesstoken
-
-Hier sieht man, ob man einen langlebigen API-Schlüssel hat und kann ihn sich von dort kopieren
-
-https://developers.facebook.com/tools/explorer/?classic=0
-
-## Instagram 
-
-Eigenen Access-Token anfordern, entweder über:
-
-http://www.stephan-romhart.de/artikel/instagram-feed-anleitung-code-access-token-api-einbindung-php
-
-Oder alternativ:  Einen access-token im 'public-content' scope generieren lassen, in dem man einer entsprechenden App Zugriff aufs eigene Profil gestattet: https://instagram.pixelunion.net/
-
-Dann gibt man einfach UserID oder UserName ein und fügt noch unter Einstellungen den Accesstoken ein.
-
-
 ## Twitter
 
 Infos zur Erstellung des Access-Tokens gibt es hier: https://developer.twitter.com/en/docs/basics/authentication/guides/access-tokens
-
-
-### Tipp
-
-> Die API verlangt normalerweise zwingend eine UserID (Dezimalzahl) beim Typ Instagram-Benuter für Feed-Anfragen via access_token. Ist keine UserID (Dezimalzahl) angegeben wird diese durch API-Anfrage ermittelt und dann erst zur eigentlichen Feed-Anfrage weitergegangen. (Was fehlschlägt, wegen fehlendem ‚public_content‘-scope bzw. SandBox-Mode)
-Glorreiche Ausnahme ist ***'self'***, diese Anfrage wird mit "UserName" druchgewunken.
-Instagram lässt einem zumindest die Berechtigung, mit entsprechenden access_token, den eigenen Stream (des access-token-Inhabers) auszulesen. 
 
 
 ## RSS Feed
@@ -192,3 +137,10 @@ Alle Infos dazu unter: https://developer.vimeo.com/api/authentication
 
 Die Stream-Tabelle lässt sich im YForm-Tablemanager importieren. Dadurch ist es möglich eine eigene Oberfläche für die Redakteure bereitzustellen. 
 
+
+## Facebook und Instagram Feeds
+
+Die Vendors facebook/graph-sdk, raiym/instagram-php-scraper und php-instagram-api/php-instagram-api wurden ab Version 4 entfernt.
+Zum einen waren diese Vendors teilweise veraltet zum anderen gab es in der Vergangenheit immer wieder Probleme mit der API und den Access Tokens.
+
+Zur Einbindung von Facebook oder Instragram empfehlen wir aktuell auf einen (ggf. kostenpflichtigen) Dienstleister wie https://rss.app zurückzugreifen, welcher Facebook- und Instagram-Streams als RSS-Feed zur Verfügung stellen.

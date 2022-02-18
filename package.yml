@@ -1,5 +1,5 @@
 package: feeds
-version: '3.2-dev'
+version: '4.0-dev'
 author: Friends Of REDAXO
 supportpage: https://github.com/FriendsOfREDAXO/feeds
 
@@ -18,10 +18,6 @@ page:
             subpages:
                 twitter:
                     title: 'translate:twitter'
-                facebook:
-                    title: 'translate:facebook'
-                instagram:
-                    title: 'translate:instagram'
         help:
             title: 'translate:help'
             perm: admin[]

@@ -62,14 +62,8 @@ if ('' == $func) {
                 case 'twitter':
                     $icon = 'fa-twitter';
                     break;
-                case 'facebook':
-                    $icon = 'fa-facebook';
-                    break;
                 case 'youtube':
                     $icon = 'fa-youtube';
-                    break;
-                case 'instagram':
-                    $icon = 'fa-instagram';
                     break;
                 case 'google':
                     $icon = 'fa-google';
